@@ -30,4 +30,16 @@ List<Department> department = [
     address: "198 Hoang Van Thu, Phuong 10",
     location: "Ho Chi Minh",
   ),
+  Department(
+    id: 5,
+    name: "Samsung",
+    address: "198 Hoang Van Thu, Phuong 10",
+    location: "Ho Chi Minh",
+  ),
+  Department(
+    id: 6,
+    name: "Samsung",
+    address: "198 Hoang Van Thu, Phuong 10",
+    location: "Ho Chi Minh",
+  ),
 ];
