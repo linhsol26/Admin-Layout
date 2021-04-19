@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:admin_layout/components/header.dart';
 
 class Manage extends StatefulWidget {
   Manage({Key key}) : super(key: key);
@@ -10,6 +11,20 @@ class Manage extends StatefulWidget {
 class _ManageState extends State<Manage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    Size size = MediaQuery.of(context).size;
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: () {},
+        ),
+      ),
+      body: Column(
+        children: [
+          Header(size: size),
+        ],
+      ),
+    );
   }
 }
