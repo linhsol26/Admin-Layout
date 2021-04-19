@@ -1,8 +1,10 @@
 import 'package:admin_layout/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:admin_layout/components/header.dart';
+import 'package:admin_layout/components/side_bar.dart';
 import 'package:admin_layout/components/department_box.dart';
 import 'package:admin_layout/models/Department.dart';
+import 'package:admin_layout/screens/Details.dart';
 
 class Manage extends StatefulWidget {
   Manage({Key key}) : super(key: key);
@@ -16,12 +18,9 @@ class _ManageState extends State<Manage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      drawer: SideBar(),
       appBar: AppBar(
         elevation: 0,
-        leading: IconButton(
-          icon: Icon(Icons.menu),
-          onPressed: () {},
-        ),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -44,6 +43,12 @@ class _ManageState extends State<Manage> {
                 ),
                 itemBuilder: (context, index) => DepartmentBox(
                   department: department[index],
+                  press: () => Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          Details(department: department[index]),
+                    ),
+                  ),
                 ),
               ),
             ),
